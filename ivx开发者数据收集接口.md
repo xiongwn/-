@@ -1,5 +1,5 @@
 # 表单api接口
-## url：https://v4rel.h5sys.cn/api/10521416/statistics/addEditInfo
+## url：/api/10521416/statistics/addEditInfo
 ### 添加开发者操作信息
 参数：
 ```javascript
@@ -18,7 +18,7 @@ complexity:Number,
 {result:{}}
 ```
 
-## url：https://v4rel.h5sys.cn/api/10521416/statistics/getStatistics
+## url：/api/10521416/statistics/getStatistics
 ### 获取某个时间段内开发者的开发数据
 参数：
 ```javascript
@@ -39,7 +39,7 @@ endTimestamp:Number,
 }]}
 ```
 
-## url：https://v4rel.h5sys.cn/api/10521416/statistics/getStatisticsByNid
+## url：/api/10521416/statistics/getStatisticsByNid
 ### 获取某开发者的指定的nid案例的开发数据
 参数：
 ```javascript
