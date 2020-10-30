@@ -12,7 +12,7 @@ deltaComplexity:Number,
 totalComplexity:Number
 }
 ```
-使用说明：比如开发者如果12:30打开某案例开始开发13:40关闭编辑页面，则在13:00发送一次请求，参数为{uid，nid，startTimestamp:12:30时间戳，endTimestamp:13:00时间戳，complexity:该时间段内修改的复杂度}，在13:40发送一次请求，参数为{uid，nid，startTimestamp:13:00时间戳，endTimestamp:13:40时间戳，complexity:该时间段内修改的复杂度}
+使用说明：每10mins发一次请求，比如开发者如果12:30打开某案例开始开发，则在12:40发送一次请求，参数为{uid，nid，startTimestamp:12:30时间戳，endTimestamp:12:40时间戳，deltaComplexity:该时间段增加的复杂度，totalComplexity:该案例当前总共的复杂度}
 
 回包:
 ```javascript
