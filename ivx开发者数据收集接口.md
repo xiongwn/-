@@ -1,5 +1,5 @@
 # 表单api接口
-## url：/api/10521416/statistics/addEditInfo
+## url：/customApi/statistics/addEditInfo
 ### 添加开发者操作信息
 参数：
 ```javascript
@@ -8,7 +8,8 @@ uid:Number,
 nid:Number,
 startTimestamp:Number,
 endTimestamp:Number,
-complexity:Number,
+deltaComplexity:Number,
+totalComplexity:Number
 }
 ```
 使用说明：比如开发者如果12:30打开某案例开始开发13:40关闭编辑页面，则在13:00发送一次请求，参数为{uid，nid，startTimestamp:12:30时间戳，endTimestamp:13:00时间戳，complexity:该时间段内修改的复杂度}，在13:40发送一次请求，参数为{uid，nid，startTimestamp:13:00时间戳，endTimestamp:13:40时间戳，complexity:该时间段内修改的复杂度}
@@ -18,7 +19,7 @@ complexity:Number,
 {result:{}}
 ```
 
-## url：/api/10521416/statistics/getStatistics
+## url：/customApi/statistics/getStatistics
 ### 获取某个时间段内开发者的开发数据
 参数：
 ```javascript
@@ -35,11 +36,12 @@ endTimestamp:Number,
 	nid:Number,
 	startTimestamp:Number,
 	endTimestamp:Number,
-	complexity:Number,
+	deltaComplexity:Number,
+	totalComplexity:Number
 }]}
 ```
 
-## url：/api/10521416/statistics/getStatisticsByNid
+## url：/customApi/statistics/getStatisticsByNid
 ### 获取某开发者的指定的nid案例的开发数据
 参数：
 ```javascript
@@ -55,6 +57,7 @@ nids:array,
 	nid:Number,
 	startTimestamp:Number,
 	endTimestamp:Number,
-	complexity:Number,
+	deltaComplexity:Number,
+	totalComplexity:Number
 }]}
 ```
