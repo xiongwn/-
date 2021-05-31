@@ -61,7 +61,7 @@ nids:array,
 	totalComplexity:Number
 }]}
 ```
-## url：/customApi/statistics/getCompanyStatistics
+## url：/api/10521416/statistics/getCompanyStatistics
 ### 获取某开发者的指定的nid案例的开发数据
 参数：
 ```javascript
