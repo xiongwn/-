@@ -61,3 +61,20 @@ nids:array,
 	totalComplexity:Number
 }]}
 ```
+## url：/customApi/statistics/getCompanyStatistics
+### 获取某开发者的指定的nid案例的开发数据
+参数：
+```javascript
+{
+startTimestamp:Number,//起始时间戳
+endTimestamp:Number,//结束时间戳
+}
+```
+回包:
+```javascript
+{result:[{
+	uid:Number,
+	deltaComplexity:Number,
+	time:Number//累计用时（ms）
+}]}
+```
