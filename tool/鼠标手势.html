@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="height: 100vh;width: 100%;background: red;">
+</body>
+<script type="text/javascript">
+	let rightmouse = 0 // 右键按下标记
+	let ctx
+	let x,y // 上个绘制点座标
+	let currentMethod // 当前事件
+	let query = [] // 事件队列
+	let methods = {
+		downright: () => {window.close()} // 关闭页面
+	}
+	let handleMethod = (method) => {
+		if(method !== currentMethod) {
+			query.push(method)
+			currentMethod = method
+		}
+	}
+	let verso = () => {
+		if(methods[query.join("")]) {
+			methods[query.join("")]()
+		}
+	}
+	$("body").on("mousedown",(e)=>{
+		console.log(e)
+		if(e.button === 2) {
+			rightmouse = 1
+			$("body").append(`<canvas id='xcanvas' height="${window.outerHeight}" width="${window.outerWidth}" style='height: ${window.outerHeight+"px"};width: ${window.outerWidth+"px"};background: transparent;position: fixed;left:0;top:0'></canvas>`)
+			ctx = $("#xcanvas")[0].getContext("2d");
+			ctx.lineWidth = 5
+		}
+	})
+	$("body").on("mouseup",(e)=>{
+		rightmouse =0
+		x = null
+		y = null
+		$("#xcanvas").remove()
+		verso()
+		currentMethod = null
+		query = []
+	})
+	$("body").on("mousemove",(e)=>{
+		if(rightmouse == 1) {
+			if(x!==null&&y!==null) {
+				ctx.moveTo(x,y)
+				ctx.lineTo(e.offsetX, e.offsetY)
+				ctx.stroke()
+				if(Math.max(Math.abs(e.offsetY - y), Math.abs(e.offsetX - x)) > 5) { // 判断抖动范围，减小精度误差带来的事件差异
+					if(Math.abs(e.offsetY - y) / Math.abs(e.offsetX - x) > 1) {
+						if(e.offsetY > y) {
+							handleMethod("down")
+						} else handleMethod("up")
+					} else if(Math.abs(e.offsetY - y) / Math.abs(e.offsetX - x) < 1) {
+						if(e.offsetX > x) {
+							handleMethod("right")
+						} else handleMethod("left")
+					}
+				}
+			}
+			x = e.offsetX
+			y = e.offsetY
+		}
+	})
+</script>
+</html>
