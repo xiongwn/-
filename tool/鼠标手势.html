@@ -14,7 +14,7 @@
 	let x,y // 上个绘制点座标
 	let currentMethod // 当前事件
 	let query = [] // 事件队列
-	let methods = {
+	let methods = { // 视自己需要进行事件扩展
 		downright: () => {window.close()} // 关闭页面
 	}
 	let handleMethod = (method) => {
