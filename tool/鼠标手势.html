@@ -32,7 +32,7 @@
 		console.log(e)
 		if(e.button === 2) {
 			rightmouse = 1
-			$("body").append(`<canvas id='xcanvas' height="${window.outerHeight}" width="${window.outerWidth}" style='height: ${window.outerHeight+"px"};width: ${window.outerWidth+"px"};background: transparent;position: fixed;left:0;top:0'></canvas>`)
+			$("body").append(`<canvas id='xcanvas' height="z-index:999999;${window.outerHeight}" width="${window.outerWidth}" style='height: ${window.outerHeight+"px"};width: ${window.outerWidth+"px"};background: transparent;position: fixed;left:0;top:0'></canvas>`)
 			ctx = $("#xcanvas")[0].getContext("2d");
 			ctx.lineWidth = 5
 		}
