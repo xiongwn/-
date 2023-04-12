@@ -31,7 +31,8 @@ sd纸面上最低要求2g显存，实际情况是4g基本不够用，sd1.5版本
 
 因为要部署到服务器，所以不涉及家用卡。建议工作站显卡配置至少高于M6000，推荐GV100。另外说一下不仅速度上，10**/16**的生成效果也不如20**/30**/40**。低型号显卡随机性也大，即使种子完全一样也很难有相似结果，最终成品不好控制。具体时间性能参考下图：
 
-![图片]
+![图片](./asset/benchmark-512.b13b01c8.webp)
+
 
 
 ## 实测性能
@@ -66,7 +67,8 @@ mutated,poorly drawn,out of frame,bad hands,
 unclear eyes,poorly drawn,cloned face,bad face
 ```
 * 测试效果：
-![图片]
+![图片](./asset/screenshot_1.png)
+
 
 
 # 应用场景
