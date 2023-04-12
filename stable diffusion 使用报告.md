@@ -1,4 +1,4 @@
-![图片](./asset/screenshot_0)
+![图片](./asset/screenshot_0.png)
 
 
 # 简介
