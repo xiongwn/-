@@ -70,6 +70,33 @@ unclear eyes,poorly drawn,cloned face,bad face
 ![图片](./asset/screenshot_1.png)
 
 
+# 接口参数
+sd可以作为api使用，其txt2img接口对应http://localhost:7861/sdapi/v1/txt2img
+参数如下：
+
+* `prompt`: 文本输入，用作生成图像的提示或指导。它可以是一个句子、一个段落或其他形式的文本。
+* `styles`: 文本输入中包含的样式信息，用于指导生成的图像风格。
+* `negative_prompt`: 一个负面文本提示，用于在生成过程中引入对比和变化。
+* `seed`: 随机数种子，用于控制生成图像的随机性。使用相同的种子可以重现相同的结果。
+* `subseed`: 辅助随机数种子，用于进一步调整生成图像的随机性。
+* `subseed_strength`: 辅助随机数种子的强度或影响程度。
+* `seed_resize_from_h`、`seed_resize_from_w`: 如果指定了这两个参数，则种子图像会被调整为指定的高度和宽度。
+* `seed_enable_extras`: 一个布尔值，表示是否使用额外的种子图像。
+* `sampler_name`: 使用的采样器（sampler）的名称，用于控制生成过程中的采样策略。
+* `batch_size`: 生成图像时使用的批量大小。
+* `n_iter`: 生成图像的迭代次数。
+* `steps`: 每次迭代中的步数。
+* `cfg_scale`: 配置尺度。
+* `width`、`height`: 生成图像的宽度和高度。
+* `restore_faces`: 一个布尔值，表示是否修复生成的图像中的面部特征。
+* `tiling`: 是否使用平铺策略，将输入文本在图像上进行平铺生成。
+* `enable_hr`: 一个布尔值，表示是否启用高分辨率生成。
+* `denoising_strength`: 如果启用了高分辨率生成，表示去噪强度。
+* `hr_scale`: 高分辨率生成的尺度。
+* `hr_upscaler`: 高分辨率生成的上采样器。
+* `hr_second_pass_steps`: 高分辨率生成的第二次迭代步数。
+* `hr_resize_x`、`hr_resize_y`: 高分辨率生成的调整尺寸。
+* `override_settings`: 一个字典，用于覆盖默认的生成设置。
 
 # 应用场景
 
